@@ -1,0 +1,15 @@
+{
+  "_note": "One of the declared patch files applied to the mirror's build tree (see ../ARCHITECTURE.md §1). REDACTED: none — this file is architecture description only (function-visibility edits), no strategy logic, no parameters, no identifiers beyond internal function names already implied by the mirror's own public README.",
+  "class": "VISIBILITY-ONLY",
+  "why": "The rehearsal harness drives the live module's clock-and-path-injected entry points directly. Live keeps them private only because in production the sole callers are the module's own two-line wall-clock wrappers. Each edit adds exactly the token \"pub \" and nothing else; the verifier mechanically reverses these edits and asserts the file is byte-identical to the live snapshot.",
+  "edits": [
+    { "from": "fn govern_at(", "to": "pub fn govern_at(" },
+    { "from": "fn entry_cancel_gate_at(state_path: &Path, now: i64, leg: &str) -> Option<&'static str> {",
+      "to":   "pub fn entry_cancel_gate_at(state_path: &Path, now: i64, leg: &str) -> Option<&'static str> {" },
+    { "from": "fn roll_session_at(state_path: &Path, now: i64) {",
+      "to":   "pub fn roll_session_at(state_path: &Path, now: i64) {" },
+    { "from": "fn note_gold_fill_at(state_path: &Path, now: i64, leg: &str) {",
+      "to":   "pub fn note_gold_fill_at(state_path: &Path, now: i64, leg: &str) {" }
+  ],
+  "_truncated": "2 further edits of the identical shape omitted here for brevity; full patch verified by the build-time check described in ../ARCHITECTURE.md."
+}
