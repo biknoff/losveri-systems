@@ -1,0 +1,29 @@
+{
+  "_source": "seals/phase_0_envelope.json (real file, first sealed envelope in the chain) — trimmed to show the structural fields; the full 22-entry lock_hash_dict and the full provenance_hash_dict are truncated with '...' since they are long lists of the same {name: sha256} shape shown once below. Nothing sensitive removed: every value here is a hash or metadata field, never source content.",
+
+  "authored_utc": "2026-04-24T23:43:57Z",
+  "envelope_version": "1.0",
+  "phase_from": -1,
+  "phase_n": 0,
+  "phase_to": 1,
+
+  "git_commit_sha": "816609e1c9e98d53729c981b9d6568c571ef077e",
+  "handoff_md_ref": "HANDOFF_phase_0.md",
+  "handoff_md_sha256": "<PENDING_HANDOFF_WRITE>",
+
+  "lock_hash_dict": {
+    "LOCK-01": "d6be7041fa0947f76b9610db3b3f107a68625863a78672c2b3b6cd6b374fd80f",
+    "LOCK-02": "e3e93dc3e4eb3f1d81f5ff7b23a5e36da03a3ada523cc4109f326bf1f15c21b3",
+    "...": "... 20 more LOCK-NN entries, same shape ..."
+  },
+
+  "provenance_hash_dict": {
+    "HANDOFF_CRYPTO_PROTOCOL.md": "965bc0ff994671c6db84b4fdde78640d63090c6bf951cb8742cd436129ce12dd",
+    "...": "... one SHA-256 entry per dependency file the phase built on ..."
+  },
+
+  "predecessor_anchor_note": "Phase 0 has no predecessor envelope. predecessor_envelope_sha256 is the file-bytes SHA-256 of HANDOFF_CRYPTO_PROTOCOL.md (the bootstrap root per crypto protocol § 5.2 / § 13).",
+  "predecessor_envelope_sha256": "965bc0ff994671c6db84b4fdde78640d63090c6bf951cb8742cd436129ce12dd",
+
+  "notes": "Phase 0 envelope. Seals 9 content deliverables + governance trio + addendum + crypto protocol. handoff_md_sha256 is PENDING because HANDOFF_phase_0.md is written AFTER the sealing ceremony completes and the seal verifies (per addendum § 16 #13). After the ceremony, this script is re-run to inject handoff_md_sha256, then the envelope is re-signed."
+}
