@@ -72,3 +72,7 @@ flowchart LR
 - [DECISIONS.md](DECISIONS.md) — choices and rejected alternatives.
 - [STORY.md](../../STORY.md) — where Abraxas sits above the Council.
 - [Chris](../chris/), [Fred](../fred/), [Fay](../fay/), [Hanuman](../hanuman/) — the house agents and comms gate Abraxas consults through.
+
+## Advising through the Pillar
+
+Abraxas doesn't answer in a vacuum: every recommendation is framed through [the Pillar](../README.md#the-pillar) — the five family principles its boot gate requires on disk — and through consultation with the house-lords (money → Chris; work → Kubera). The contract language is explicit: agents give informed insights, observations, and appreciations; **verdicts belong to the operators**. That division — constitution above, specialist counsel beside, human decision at the end — is the Council's whole design.
