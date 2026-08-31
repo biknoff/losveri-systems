@@ -28,6 +28,7 @@ This repo is a **curated evidence archive**, not a code mirror. The working repo
 | **i-ii.trade** | The product: trade, draw, drop voice notes on the chart, share with friends — "together"; or run your strategy scheduler — "alone" | RUNNING (early product) | `kubera/hadit/i-ii-trade/` |
 | **HADIT ⁄ NT8 (Chicago)** | The origin: Python strategy logic bridged into NinjaTrader 8 via a C# DLL, live-traded, then deliberately outgrown | BUILT+RETIRED | `kubera/hadit/nt8-chicago/` |
 | **Abraxas** | The lord of lords: the voice-interfaced agent the family governs its life through | RUNNING (daily) | `council/abraxas/` |
+| **Kubera** | The 5th-house quant-supervisor agent (formerly *Leona*) — house-lord of all the work builds below | BUILT+DORMANT (agent); its house runs on | `kubera/` |
 | **Fred** | The unconscious: deterministic prosody measurement from longitudinal voice notes; decisions gate on the speaker's prosodic floor | PAUSED (verified) + detector BUILT+DORMANT | `council/fred/` |
 | **Chris** | Household finance operator: voice-note an expense, it lands in the ledger | RUNNING | `council/chris/` |
 | **Hanuman** | The comms gate: WhatsApp/Gmail protocols every agent invokes; sub-second local voice pipeline | RUNNING | `council/hanuman/` |
