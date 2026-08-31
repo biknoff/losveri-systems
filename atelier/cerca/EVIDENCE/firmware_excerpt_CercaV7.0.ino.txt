@@ -1,0 +1,113 @@
+CERCA — firmware excerpt (CercaV7.0.ino)
+==========================================
+What this is: two excerpts from the live Arduino firmware that drives the
+instrument, copied verbatim (read-only) from the operator's EVO drive,
+path: CERCA/CercaV7.0/CercaV7.0.ino (238 lines total, dated 2025-05-17,
+"v7.0" — the version number is itself iteration evidence; earlier CercaV6.x
+and the related CercaCapIIR.ino / Beacon / BeaconII sketches sit alongside
+it on the same drive).
+Redactions: none — this is generic signal-processing/instrument code, no
+personal data, no credentials.
+
+--- Excerpt 1: user config + beacon timing (lines 1-46) ---------------------
+/* ── Capacitive-Matrix Nano v7.0 + Auto‐Cal Raw with Tilt ───────────────
+   Fecha: 2025-05-17
+   • Base v6.8 original
+   • Auto‐calibración raw channels tras RAW_CAL_LOOPS ciclos:
+       – calcula media y máximo en ventana
+       – rawCalAuto = max*RAW_CAL_TILT + avg*(1-RAW_CAL_TILT)
+   • Luego resta rawCalAuto + rawCalUser
+   • Exactamente 10 columnas (6 pares + 4 canales)
+────────────────────────────────────────────────────────────────────────*/
+
+#include <ADCTouch.h>
+#include <arduinoFFT.h>
+
+/* == USER CONFIG ======================================================== */
+constexpr byte U = 4;                                 // número de canales/users
+const byte aPin[U] = { A0, A1, A2, A3 };              // pines analógicos (sensores)
+const byte dPin[U] = {  2,  3,  4,  5 };              // pines digitales (beacon/emisor)
+
+constexpr uint16_t INITIAL_DELAY_MS = 3000;           // ms al inicio para soltar electrodos
+
+constexpr uint16_t BEACON_US = 300;                   // duración total pulso beacon (µs)
+constexpr uint8_t  HIGH_US   =   8;                   // tiempo HIGH dentro del beacon (µs)
+constexpr uint16_t LOW_US    = BEACON_US - HIGH_US;   // resto LOW (µs)
+constexpr uint16_t SETTLE_US = 400;                   // espera tras Hi-Z para estabilizar (µs)
+
+constexpr uint8_t  ADC_OVS          = 16;   // oversampling ADCTouch.read()
+constexpr uint8_t  BASELINE_SAMPLES = 100;  // muestras para baseline inicial
+
+constexpr uint8_t  FIR_N            = 4;    // orden del filtro FIR
+constexpr uint8_t  NFFT             = 16;   // puntos para FFT notch adaptativo
+constexpr float    ALPHA            = 0.6f; // coef IIR (suavizado global)
+
+constexpr float    SMOOTH_ATTACK   = 0.50f; // coeficientes attack (subida)
+constexpr float    SMOOTH_RELEASE  = 0.75f; // coeficientes release (bajada)
+
+constexpr int16_t  CAL_TRIM    = 4;         // trim fijo de calibración
+constexpr int16_t  GLITCH_STEP = 200;       // umbral anti-glitch
+
+constexpr float    BASE_IIR_COEF   = 0.005f; // coef baseline dinámico
+constexpr float    QUIET_THRESHOLD = 10.0f; // umbral para actualizar baseline
+
+float gainPairs[6] = {3,3,3,3,3,3};           // ganancias para cada par único
+
+--- Excerpt 2: 4x4 beacon scan + 6-pair conductance matrix (lines 114-186) --
+void loop(){
+  // 1) Escaneo 4×4: FIR → IIR → Notch (diagonal) → Attack/Release
+  for(byte em=0; em<U; em++){
+    driveLOW (dPin[em]); delayMicroseconds(LOW_US/2);
+    driveHIGH(dPin[em]); delayMicroseconds(HIGH_US);
+    driveLOW (dPin[em]); delayMicroseconds(LOW_US/2);
+    hiZ      (dPin[em]); delayMicroseconds(SETTLE_US);
+
+    for(byte rc=0; rc<U; rc++){
+      // FIR
+      Fir &f = fir[em][rc];
+      int16_t raw = ADCTouch.read(aPin[rc], ADC_OVS);
+      f.sum    -= f.buf[f.head];
+      f.buf[f.head] = raw;
+      f.sum    += raw;
+      f.head   = (f.head+1)%FIR_N;
+
+      // IIR
+      float vF = float(f.sum)/FIR_N;
+      Iir &g  = iir[em][rc];
+      g.value = ALPHA*vF + (1-ALPHA)*g.value;
+
+      // Notch (solo diagonal)
+      float x = (em==rc && notch[rc].on)
+                ? biquad(notch[rc],g.value)
+                : g.value;
+
+      // Attack/Release smoothing
+      float d = x - g.out;
+      float k = (d>0) ? SMOOTH_ATTACK : SMOOTH_RELEASE;
+      g.out += k*d;
+      ...
+    }
+  }
+  ...
+  // 4) Cálculo e impresión de 6 pares únicos
+  static const byte Pmap[6][2] = {{0,1},{0,2},{0,3},{1,2},{1,3},{2,3}};
+  for(byte p=0;p<6;p++){
+    byte a=Pmap[p][0], b=Pmap[p][1];
+    float v1 = iir[a][b].out - (baseline[b]+CAL_TRIM);
+    float v2 = iir[b][a].out - (baseline[a]+CAL_TRIM);
+    float v  = 0.5f*(v1+v2);
+    if(v<0) v=0;
+    v *= gainPairs[p];
+    float prev = lastVal[a][b];
+    if(fabsf(v-prev)>GLITCH_STEP) v=prev;
+    lastVal[a][b] = v;
+    if(v>1023) v=1023;
+    Serial.print(int(v+0.5f)); Serial.print('\t');
+  }
+------------------------------------------------------------------------------
+Reading: each of 4 bodies (aPin/dPin[0..3]) takes a turn as beacon emitter
+(driveLOW→driveHIGH→driveLOW→hiZ, an 8µs pulse inside a 300µs window) while
+all 4 channels listen; FIR→IIR→adaptive-notch→attack/release cleans each of
+the 16 raw readings; Pmap folds the 4×4 matrix down to the 6 unique pairs
+(plus the 4 self/diagonal channels referenced in ARCHITECTURE.md) that feed
+the gesture grammar.
