@@ -15,7 +15,7 @@ mark.
 This directory keeps the two kinds of claim visibly apart, on purpose:
 
 - **What is running today** — a real public surface, `glass.i-ii.trade`, a strictly read-only
-  gateway onto the live HADIT cockpit, with privilege separation enforced in server code, not
+  gateway onto the [HADIT Cockpit](../cockpit/) — the same ~34k-line trading front end documented there — with privilege separation enforced in server code, not
   hidden buttons.
 - **What is in build** — the login-gated "alone/together" app itself runs on the same VM
   (operator-attested; it was not independently inspected for this archive, so its feature
@@ -28,7 +28,7 @@ This directory keeps the two kinds of claim visibly apart, on purpose:
 ```mermaid
 flowchart LR
     subgraph VM["i-ii.trade's own small VM"]
-        COCKPIT["live HADIT cockpit<br/>(operative: order/cancel/flatten/arm-live/...)"]
+        COCKPIT["HADIT Cockpit<br/>(operative: order/cancel/flatten/arm-live/...)<br/>see ../cockpit/"]
         GLASS["glass.py<br/>read-only gateway process<br/>method default-deny + path denylist<br/>+ credential isolation + book redaction"]
         APP["app/ · glass-only front door<br/>static page + OG card"]
         COCKPIT -->|GET/HEAD only, proxied and redacted| GLASS

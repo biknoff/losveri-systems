@@ -53,7 +53,9 @@ the Rung-0/1 exploitation half. Per the blueprint's own accounting:
 That is the honest mid-build framing this project states plainly: the
 Cold-Firing build that ran was good, disciplined engineering work — it is
 also, by the apparatus's own later self-correction, PROBE running without its
-SEER half yet existing. See `ARCHITECTURE.md` § 6 for what SEER/PROBE would
+SEER half yet existing. The unbuilt theory itself draws on three fields — physics, biology,
+statistics — see `EVIDENCE/theory_cross_disciplinary_inspiration.md`.
+See `ARCHITECTURE.md` § 6 for what SEER/PROBE would
 add.
 
 ## Diagram
@@ -105,6 +107,10 @@ yet executing.
 - `EVIDENCE/predecessor_urr_project.md` — URR (April 2026), the predecessor project whose own
   deployment contract names itself "the first NUIT deployment spec" — real dashboard, stress/
   falsification testing, config-as-source-of-truth, multi-party sign-off, a project earlier
+- `EVIDENCE/theory_cross_disciplinary_inspiration.md` — the mathematical/scientific lineage behind
+  the unbuilt SEER/PROBE apparatus: physics (Kepler epistemology), biology (chemotaxis, held as a
+  shelved candidate, not a foundation), statistics (likelihood-free inference, reshaped) — DESIGNED,
+  stated plainly as such
 - `EVIDENCE/v_chain_verdicts_structure.md` — V_is/V_oos/V_stress field names,
   row counts, dates (2026-05-11), values redacted
 - `EVIDENCE/mongoose_worker_inventory.md` — the 20 deterministic worker

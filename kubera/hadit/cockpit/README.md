@@ -53,3 +53,10 @@ flowchart TB
 *No screenshots are included (this archive was built without interactive browser access to the
 live cockpit); evidence here is source- and log-derived, not visual. Hostnames, account data,
 strategy parameters, and P&L are redacted throughout, per this repo's standing policy.*
+
+## Public mirror
+
+`glass.i-ii.trade` is a read-only mirror of this exact cockpit — not a separate build. The
+[i-ii.trade](../i-ii-trade/) project documents the mirror's own privilege-separation design
+(method default-deny, path denylist, credential isolation, book redaction) in detail; this
+project is what it's a mirror *of*.
