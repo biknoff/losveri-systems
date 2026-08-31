@@ -10,7 +10,7 @@
 """SimpleFIN bank feed client for Chris.
 
 Fetches real bank/card transactions from SimpleFIN Bridge API.
-Access URL read from /Users/leo/Los Veri/ANIMA/.auth.info at runtime.
+Access URL read from <workspace-root>/ANIMA/.auth.info at runtime.
 Never log or expose the access URL.
 """
 
@@ -23,7 +23,7 @@ from urllib.parse import urlparse
 
 import requests
 
-AUTH_INFO_PATH = Path("/Users/leo/Los Veri/ANIMA/.auth.info")
+AUTH_INFO_PATH = Path("<workspace-root>/ANIMA/.auth.info")
 SANTO_DOMINGO = timezone(timedelta(hours=-4))
 MAX_WINDOW_DAYS = 90
 DEFAULT_LOOKBACK_DAYS = 7

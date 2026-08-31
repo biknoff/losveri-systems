@@ -39,7 +39,7 @@ Multi-account and copy-trading both reduce to the same primitive: the cockpit fa
 
 ## Boundary: family infrastructure vs. external-user infrastructure
 
-The family's own execution engine ([HADIT engine](../engine/)) and its manual-trading cockpit run on a separate server from Miami. Miami is a complete, self-contained stack — fleet, gateways, cockpit, and the external users' credentials — on its own dedicated box. The two stacks share lineage (the cockpit UI design, the ZMQ-fan-out pattern) but not infrastructure, credentials, or failure domain. When the family later ported a cockpit panel into their own the family's futures venue setup, they ported it *from* Miami's canonical panel — evidence that the design flowed outward and then partly back, never that the infrastructure merged (see `EVIDENCE/cross_pollination_amp_cockpit.md`).
+The family's own execution engine ([HADIT engine](../engine/)) and its manual-trading cockpit run on a separate server from Miami. Miami is a complete, self-contained stack — fleet, gateways, cockpit, and the external users' credentials — on its own dedicated box. The two stacks share lineage (the cockpit UI design, the ZMQ-fan-out pattern) but not infrastructure, credentials, or failure domain. When the family later ported a cockpit panel into their own the family's futures venue setup, they ported it *from* Miami's canonical panel — evidence that the design flowed outward and then partly back, never that the infrastructure merged (see `EVIDENCE/cross_pollination_family_cockpit.md`).
 
 ## Known scaling limit
 

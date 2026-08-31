@@ -1,5 +1,5 @@
 # file: SNIPPETS/contract_state_classifier.py
-# source: ledger/contract_state.py (5th-house-kubera, branch cocktail-v3), lines 1-95
+# source: ledger/contract_state.py (the research repo), lines 1-95
 # excerpted read-only, in full for this module's header + state enum + role matcher.
 # The classify() body (component composition logic) is not reproduced — this excerpt
 # is enough to show the six-state contract and that the classifier is pure/deterministic.

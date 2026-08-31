@@ -22,10 +22,10 @@ operator's EVO drive, plus a separate `Atelier Verí Plants` archive dated
 2021, indicating the piece was built and iterated across more than one
 period rather than a single one-off session.
 
-## Grasping for Space — label pending (operator record: portfolio mostly built/exhibited; on-disk evidence not located this pass)
+## Grasping for Space — label pending (operator record: portfolio mostly built/exhibited; on-disk evidence not located this archive)
 
 A piece concerned with gesture and spatial reach, distinct from
-Chichigua below. Not located on the reachable drives during this pass;
+Chichigua below. Not located on the reachable drives;
 documented in the operator's records. Labeled DESIGNED rather than BUILT
 pending direct evidence.
 
@@ -37,11 +37,11 @@ drive (the same drive holding the `PLANTS` subfolder used in Plant-Based
 Music above), confirming a real, exercised Bidule patch rather than a
 concept only.
 
-## Cromafonía — label pending (operator record: designed/built; on-disk evidence not located this pass)
+## Cromafonía — label pending (operator record: designed/built; on-disk evidence not located this archive)
 
 A piece exploring color-to-sound mapping (the name itself names the
 concept — "chroma" + "phonia"). Not located on the reachable drives during
-this pass; documented in the operator's records. Labeled DESIGNED rather
+this archive; documented in the operator's records. Labeled DESIGNED rather
 than BUILT pending direct evidence.
 
 ## Chichigua — BUILT + FLOWN
@@ -51,7 +51,7 @@ tabletop model. Sensors and an IMU ride aloft on the kite itself, streaming
 motion data down over OSC to drive music generation on the ground. This is
 its own piece, distinct from Grasping for Space above, and the
 operator-confirmed case of an instrument whose "performance space" is the
-open air. Not located as files on the reachable drives during this pass;
+open air. Not located as files on the reachable drives;
 documented in the operator's own, direct account of flying it.
 
 ## SoundMES — CONCEPT

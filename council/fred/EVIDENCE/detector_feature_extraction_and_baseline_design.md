@@ -99,7 +99,7 @@ the reference itself. The baseline is computed **overall** and **separately per 
 bucket**, with a hard floor of 20 turns before an hour bucket is trusted enough to report — thin
 buckets are silently excluded rather than baselined on weak support. Turns under 0.35s duration
 and turns missing ≥25% of the curated feature set are filtered out before baseline construction
-(`collect_leo_turns`, same file). No baseline number, percentile value, or threshold appears here
+(`collect_operator_turns`, same file). No baseline number, percentile value, or threshold appears here
 or anywhere in this repository.
 
 ## Reference documentation (existence only)

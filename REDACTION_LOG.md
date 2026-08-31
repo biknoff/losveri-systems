@@ -29,3 +29,13 @@ Tooling: gitleaks/trufflehog/exiftool not installed on this host; systematic gre
 
 ## Standing policy (final confirm at publish gate)
 Allowed: `i-ii.trade`, `glass.i-ii.trade`, Leo & Mariele as operators/co-founders, Leo's public GPG fingerprint, loopback IPs, dates and structural counts. Everything else in the handoff §6 list stays out.
+
+## Sweep B — contextual human-reader pass (2026-09-01)
+~100 files read end-to-end. Verdict: label discipline strong repo-wide; fixes applied:
+- HIGH privacy: `collect_leo_turns`→operator; voice-enrollment filenames→operator_a/b.wav; named+timestamped utterance log→`<operator>`/`<ts>`; workspace paths genericized (abraxas/chris/watchers).
+- HIGH: broken relative links (11, kubera/nuit + miami subtrees) — all fixed, link-checker now clean.
+- Inference: `cross_pollination_amp_cockpit.md` renamed (broker in filename); contract codes→`<gold-future>`/`<index-future>`; fleet-capacity number genericized; retired-cred filename dropped from chicago inventory.
+- Internal bleed: "this pass"/atlas jargon/receipt name-pending genericized; private repo/branch name genericized in spectral headers; `/api/bugatti_src`→`/api/<internal>`.
+- Label: `BUILT+VALIDATED, dormant`→`BUILT+DORMANT (validated)`.
+- Architect overrules (recorded): "Los Verí" stays (the repo's own public identity); strategy count stays (scale ≠ edge); BUILT+RETIRED stays (in the legend); `mortal_architect_succession.md` session-mechanics content stays (it IS the protocol being showcased — conscious publish decision).
+- Note: sweep B ran parallel to sweep A's fixes; its gmail/watchdog/state-path items were already fixed in 3a47387.

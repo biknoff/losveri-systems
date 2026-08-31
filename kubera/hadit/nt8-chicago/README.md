@@ -55,6 +55,6 @@ No account IDs, broker names, hostnames/IPs (referred to generically as "a Windo
 "a dedicated Windows box"), strategy names, strategy rules, symbol+rule combinations, or
 P&L appear anywhere in this directory. Every file under `EVIDENCE/` states its own
 redactions at the top. One source document encountered during research
-(`Hadit - Chicago.txt`) was found to contain live plaintext credentials rather than
+(`<retired-credentials note — vaulted separately>`) was found to contain live plaintext credentials rather than
 pipeline documentation; it was not read past its first lines and is not reproduced or
 referenced beyond the note in `EVIDENCE/chicago-exports-inventory.md`.

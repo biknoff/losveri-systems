@@ -33,7 +33,7 @@ Hanuman moves messages; it does not decide what they say or who they're for. `wh
 - A real MCP tool surface: `search_contacts`, `list_messages`, `list_chats`, `get_chat`, `get_message_context`, `send_message`, `send_document`, `search_messages` — 8 tools, defined with Zod schemas, exercised by a maintained TypeScript codebase (`whatsapp-mcp/src/mcp.ts`, active commit history).
 - Two independent MCP-consumer skill docs (`skills/send-whatsapp-via-hanuman/SKILL.md`, `whatsapp-mcp/SKILL.md`) that both name Hanuman's repo as the canonical path and explicitly forbid alternate transports.
 - The `ear/` Swift package depends on and instantiates `WhisperKit` at the `large-v3-turbo` model — confirmed in `Package.swift` and `main.swift`, not just described in prose.
-- A working, separate speaker-identification pipeline (`brain/speaker_id.py`, ECAPA-TDNN via speechbrain) with real enrolled voice samples on disk (`enrollment/leo.wav`, `enrollment/mariele.wav`, `enrollment/embeddings.json`) and real session transcript logs.
+- A working, separate speaker-identification pipeline (`brain/speaker_id.py`, ECAPA-TDNN via speechbrain) with real enrolled voice samples on disk (`enrollment/operator_a.wav`, `enrollment/operator_b.wav`, `enrollment/embeddings.json`) and real session transcript logs.
 - `config/hanuman.yaml` declares CoreAudio AEC (`system_aec: true`) and speaker-embedding-based echo exclusion as the intended echo-cancellation design — see `EVIDENCE/voice_pipeline_components.md` for exactly what's config vs. what's implemented in the current build.
 
 ## Evidence index

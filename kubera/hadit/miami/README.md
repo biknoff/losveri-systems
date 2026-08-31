@@ -10,7 +10,7 @@ Miami is the generalization of the family's own manual-trading cockpit (see [HAD
 
 ## The isolation decision
 
-External users' accounts do not live on the family's own infrastructure. HADIT's engine server runs the family's ~14 live strategies; Miami runs on a **separate, dedicated server** entirely — a deliberate boundary, not an afterthought. Someone else's money and someone else's credentials do not share a box, a container fleet, or a failure domain with the family's own capital. See [STORY.md](../../STORY.md) ("Hygiene is architecture") and [LINEAGE.md](../../LINEAGE.md) thread 1 ("their accounts could not live beside the family's own"). The architecture below enforces that separation structurally — Miami's fleet, gateway, and cockpit are a self-contained stack on their own host.
+External users' accounts do not live on the family's own infrastructure. HADIT's engine server runs the family's ~14 live strategies; Miami runs on a **separate, dedicated server** entirely — a deliberate boundary, not an afterthought. Someone else's money and someone else's credentials do not share a box, a container fleet, or a failure domain with the family's own capital. See [STORY.md](../../../STORY.md) ("Hygiene is architecture") and [LINEAGE.md](../../../LINEAGE.md) thread 1 ("their accounts could not live beside the family's own"). The architecture below enforces that separation structurally — Miami's fleet, gateway, and cockpit are a self-contained stack on their own host.
 
 ## Architecture (short version)
 
@@ -51,7 +51,7 @@ flowchart LR
 | [EVIDENCE/reconcile_boot_fleet_docstring.md](EVIDENCE/reconcile_boot_fleet_docstring.md) | Boot-time fleet reconciliation — the architecture headline, in its own words |
 | [EVIDENCE/port_map_structure.md](EVIDENCE/port_map_structure.md) | Per-account service structure (ports redacted to `<port>`) |
 | [EVIDENCE/git_log_hadit_mt5.md](EVIDENCE/git_log_hadit_mt5.md) | Active-development evidence — most recent commits, including a multi-account UI fix |
-| [EVIDENCE/cross_pollination_amp_cockpit.md](EVIDENCE/cross_pollination_amp_cockpit.md) | The family's own family futures cockpit panel, ported from Miami's canonical cockpit panel |
+| [EVIDENCE/cross_pollination_family_cockpit.md](EVIDENCE/cross_pollination_family_cockpit.md) | The family's own family futures cockpit panel, ported from Miami's canonical cockpit panel |
 
 ## Snippets
 
@@ -66,4 +66,4 @@ flowchart LR
 - [ARCHITECTURE.md](ARCHITECTURE.md) — fleet model, config generation, reconcile-at-boot, the family-infra/external-infra boundary.
 - [DECISIONS.md](DECISIONS.md) — choices and rejected alternatives.
 - [HADIT engine](../engine/) — the family's own execution engine; Miami is its cockpit generalized into a service.
-- [LINEAGE.md](../../LINEAGE.md) thread 1 — where Miami sits in the trading-stack lineage.
+- [LINEAGE.md](../../../LINEAGE.md) thread 1 — where Miami sits in the trading-stack lineage.

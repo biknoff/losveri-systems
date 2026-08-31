@@ -44,7 +44,7 @@ DENY_PATHS = {
     "/api/stage_gold_mode", "/api/stage_roll", "/api/stage_sitout", "/api/push_cocktail",
     "/api/run", "/api/monitor_toggle", "/api/monitor_ingest", "/api/health_ingest",
     "/api/dismiss_sitout", "/hadit/compute/run", "/hadit/engine/weather_ack",
-    "/api/bugatti_src",   # returns a cross-origin URL carrying a bearer token
+    "/api/<internal>",   # returns a cross-origin URL carrying a bearer token
 }
 ```
 

@@ -25,7 +25,7 @@ And the mirror's own conclusion, stated directly under those two quotes:
 
 > **It is now a mirror.**
 
-This is the doctrine restated at the top of [VERIFICATION.md](../../../VERIFICATION.md) for the
+This is the doctrine restated at the top of [VERIFICATION.md](../../../../VERIFICATION.md) for the
 whole repo: *"rehearse in the mirror, observe, then live."* This project is where that sentence
 is enforced mechanically rather than left as a process reminder — see
 [`symlink_proof.md`](symlink_proof.md) for how "still a mirror" is checked on every build, not

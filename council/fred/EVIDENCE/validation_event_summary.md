@@ -37,5 +37,5 @@ side having seen the other's signal.
 
 The detector's scoring code has been untouched since this event (2026-04-10); the voice-note
 ingestion pipeline that feeds its corpus kept running independently afterward, into at least
-mid-2026. This is the shape of "BUILT+VALIDATED, dormant" used throughout this directory: proven
+mid-2026. This is the shape of "BUILT+DORMANT (validated)" used throughout this directory: proven
 once, deliberately not re-run since, not decayed or abandoned mid-build.

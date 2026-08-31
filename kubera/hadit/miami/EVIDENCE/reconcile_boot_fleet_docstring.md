@@ -11,7 +11,7 @@ Reconcile the declarative Hadit MT5 fleet after Docker/host startup.
 
 The cockpit owns account configuration; this helper owns only boot recovery.  It never embeds
 users, accounts, or credentials.  Desired containers come from fleet_registry.json, and missing
-or stopped shells are brought up one at a time to avoid a 25-prefix Wine startup spike.
+or stopped shells are brought up one at a time to avoid a multi-account Wine startup spike.
 ```
 
 **Behavior, read from the source:**

@@ -7,7 +7,7 @@
 ---
 
 ```bash
-ROOT="/Users/leo/Los Veri"
+ROOT="<workspace-root>"
 ...
 BOOTSTRAP_FILE="$ROOT/Agents/ABRAXAS_GSD_BOOTSTRAP.md"
 CONTINUITY_FILE="$ROOT/Agents/ABRAXAS_CONTINUITY_MANIFEST.md"

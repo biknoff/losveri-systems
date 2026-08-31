@@ -12,7 +12,7 @@
 > Self-contained manual trading panel ported from the canonical Miami panel directory (`cockpit_baby.html` ~153KB + `baby_chart.html` ~237KB) and venue-translated to the family's futures venue. All code lives on [the family's own box].
 >
 > ### Venue translation applied
-> - `XAUUSD → MGCQ26`, `BTCUSD → MESU26` in all symbol selectors, JS defaults, and iframe src
+> - `XAUUSD → <gold-future>`, `BTCUSD → <index-future>` in all symbol selectors, JS defaults, and iframe src
 > - Volume: default 0.10 lot → 1 contract; step 1; label "lot" → "ctr"
 > - Title: "MT5 Cockpit" → "the family futures cockpit"
 > - A shim script bypasses login/config, hardcodes the account selection, stubs endpoints

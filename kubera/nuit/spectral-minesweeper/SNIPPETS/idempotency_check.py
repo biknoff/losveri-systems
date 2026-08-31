@@ -1,5 +1,5 @@
 # file: SNIPPETS/idempotency_check.py
-# source: mongooses/mongoose_v_is.py (5th-house-kubera, branch cocktail-v3), ~lines 1299-1376
+# source: mongooses/mongoose_v_is.py (the research repo), ~lines 1299-1376
 # excerpted read-only; math/thresholds elsewhere in the file are NOT reproduced here.
 #
 # What this shows: LOCK-20's idempotency contract as actually implemented — the

@@ -1,6 +1,6 @@
 // file: SNIPPETS/verdict_row_structure.jsonl
 // source: cold_firing_cf11_v_is/v_is_verdicts.jsonl and cold_firing_cf11_v_oos/v_oos_verdicts.jsonl
-// (5th-house-kubera, branch cocktail-v3), dated 2026-05-11.
+// (the research repo), dated 2026-05-11.
 // FIELD NAMES are real. All numeric VALUES are replaced with <redacted> — pf, n, expR,
 // win_rate, per-year breakdowns, and the `config` block (which contains strategy
 // parameters, entry/exit windows, stop sizing) are trade-secret and never shown here.

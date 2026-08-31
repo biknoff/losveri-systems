@@ -1,7 +1,7 @@
 # Build Method + Crypto Governance
 
 **Status:** BUILT+DORMANT (proven, parked 2026-04-28)
-**Part of:** NUIT — see [STORY.md](../../STORY.md)
+**Part of:** NUIT — see [STORY.md](../../../STORY.md)
 
 How do you trust a build that was produced across a dozen separate AI chat sessions, months apart,
 each one starting from zero memory of the last? The answer built here: every session boundary gets

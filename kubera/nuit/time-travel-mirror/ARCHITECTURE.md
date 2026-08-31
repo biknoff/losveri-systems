@@ -91,7 +91,7 @@ still unexplained is red by construction, not silently dropped.
 - **Recon consumes the witness spine; it cannot order.** The nightly reconciler reads the witness
   log and venue-truth records after the fact. It has no path to place, modify, or cancel a live
   order — the same "watcher cannot author" separation applied to supervision elsewhere in this
-  repo (see [STORY.md](../../STORY.md), [VERIFICATION.md](../../VERIFICATION.md)).
+  repo (see [STORY.md](../../../STORY.md), [VERIFICATION.md](../../../VERIFICATION.md)).
 - **The deploy gate is a human decision, evidence-backed.** The mirror produces an attributed
   rehearsal verdict against a fixed reference constant; a human reads it and decides whether to
   deploy. The mirror does not deploy itself.

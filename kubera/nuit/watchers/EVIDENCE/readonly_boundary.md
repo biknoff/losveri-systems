@@ -6,7 +6,7 @@ nothing — this is a structural absence, not a data excerpt.
 
 ```
 $ grep -rn "order_send\|positions_close\|OrderSend\|place_order\|cancel_order" \
-      /home/nuit/nuit_supervisor/*.py
+      <research-host>/nuit_supervisor/*.py
 (no matches)
 ```
 

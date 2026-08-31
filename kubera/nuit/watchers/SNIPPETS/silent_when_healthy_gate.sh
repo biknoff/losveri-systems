@@ -7,7 +7,7 @@
 # structurally; no actual sha values appear (see EVIDENCE/cron_durable_layer.md
 # for why: <sha> replaces the real baseline value throughout this project).
 
-timeout 150 python3 /home/nuit/wake_report.py > "$OUT" 2>&1
+timeout 150 python3 <research-host>/wake_report.py > "$OUT" 2>&1
 rc=$?
 cp "$OUT" "$LEDGER/latest.md" 2>/dev/null
 
@@ -15,7 +15,7 @@ cp "$OUT" "$LEDGER/latest.md" 2>/dev/null
 ls -1t "$LEDGER"/wake_*.md 2>/dev/null | tail -n +201 | xargs -r rm -f
 
 LIVE_SHA=$(grep -oE 'sha `[0-9a-f]{16}`' "$OUT" | head -1 | grep -oE '[0-9a-f]{16}' | head -1)
-LAST=/home/nuit/for_the_record/.backstop_last_alerted_sha
+LAST=<research-host>/for_the_record/.backstop_last_alerted_sha
 
 alert=""
 if [ $rc -eq 124 ]; then

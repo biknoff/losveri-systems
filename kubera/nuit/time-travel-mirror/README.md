@@ -1,7 +1,7 @@
 # Time Travel Mirror
 
 **Status:** mirror — **BUILT** (exercised) · nightly reconciliation — **RUNNING**
-**Part of:** NUIT — see [STORY.md](../../STORY.md)
+**Part of:** NUIT — see [STORY.md](../../../STORY.md)
 
 Two roles, one system. First: a **deploy-rehearsal mirror** — the backtest harness compiles
 against the live engine's own bytes (372 of 373 engine-tree files are symlinks into a read-only

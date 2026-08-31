@@ -1,7 +1,7 @@
 # NUIT watchers
 
 **Status:** RUNNING
-**Part of:** NUIT — see [STORY.md](../../STORY.md)
+**Part of:** NUIT — see [STORY.md](../../../STORY.md)
 
 An independent supervision fleet that watches the live trading engine from a separate host —
 nine systemd timers firing roughly every 60 seconds, a cron layer that survives session death,

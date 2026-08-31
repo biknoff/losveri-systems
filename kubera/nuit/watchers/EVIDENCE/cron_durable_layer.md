@@ -9,12 +9,12 @@ never shown, even in a comment).
 # Los Verí LIVE supervision — DURABLE layer (survives session death). Re-armed 2026-08-08 (Sat). UTC.
 # Baseline: live sha <sha> (authorized deploy). Silent when flat; telegram the operators.
 # --- event-driven safety detectors (every 60s) ---
-* * * * * /usr/bin/python3 /home/nuit/managed_stop_watch.py >/dev/null 2>>/home/nuit/for_the_record/.managed_stop.cronerr
-* * * * * /usr/bin/python3 /home/nuit/zeroed_leg_watch.py >/dev/null 2>>/home/nuit/for_the_record/.zeroed_leg.cronerr
+* * * * * /usr/bin/python3 <research-host>/managed_stop_watch.py >/dev/null 2>><research-host>/for_the_record/.managed_stop.cronerr
+* * * * * /usr/bin/python3 <research-host>/zeroed_leg_watch.py >/dev/null 2>><research-host>/for_the_record/.zeroed_leg.cronerr
 # --- 2h backstop: runs wake_report, archives -> backstop_runs/latest.md, telegrams ONLY on sha-drift/crash ---
 # Fires :05 past even UTC hours. Self-silent when flat + sha-matched.
-* * * * * /usr/bin/python3 /home/nuit/trade_watch.py >/dev/null 2>>/home/nuit/for_the_record/.trade_watch.cronerr
-5 */3 * * * /home/nuit/backstop_run.sh >/dev/null 2>>/home/nuit/for_the_record/.backstop.cronerr
+* * * * * /usr/bin/python3 <research-host>/trade_watch.py >/dev/null 2>><research-host>/for_the_record/.trade_watch.cronerr
+5 */3 * * * <research-host>/backstop_run.sh >/dev/null 2>><research-host>/for_the_record/.backstop.cronerr
 ```
 
 Two things this proves:

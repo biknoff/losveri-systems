@@ -26,7 +26,7 @@ consistent with a manual "grab what matters before the box goes away" export rat
 an automated backup job, which fits the "deliberately outgrown, not abandoned" framing:
 someone took the time to pull artifacts off before decommissioning.
 
-**Note:** a separate file in this same parent folder (`Hadit - Chicago.txt`, a
+**Note:** a separate file in this same parent folder (`<retired-credentials note — vaulted separately>`, a
 description-style document) was found during research to contain live, plaintext
 remote-access credentials rather than pipeline documentation. It was not read past its
 first lines and is not quoted or otherwise reproduced anywhere in this project directory.

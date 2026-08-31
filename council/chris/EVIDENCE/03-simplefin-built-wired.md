@@ -2,7 +2,7 @@
 
 **What this is:** proof the SimpleFIN client is not a stub — it's imported and called by a live, routed sub-agent. Three pieces: the import line in `household_query_tools.py`, the routing line in `agent.py`, and the sub-agent's own instruction prompt naming the tool as primary. Full client excerpt in `SNIPPETS/simplefin_client_excerpt.py`.
 
-**Redactions applied:** the credential-resolution code below references `/Users/leo/Los Veri/ANIMA/.auth.info` and a bundled `.simplefin_url` file — paths are kept (they contain no secret) but the secret values themselves were never read, printed, or included anywhere in this directory. The GCP project number that appears as a Secret Manager fallback default in source is replaced with `<redacted>`.
+**Redactions applied:** the credential-resolution code below references `<workspace-root>/ANIMA/.auth.info` and a bundled `.simplefin_url` file — paths are kept (they contain no secret) but the secret values themselves were never read, printed, or included anywhere in this directory. The GCP project number that appears as a Secret Manager fallback default in source is replaced with `<redacted>`.
 
 ## 1. The client is imported by the tool layer
 

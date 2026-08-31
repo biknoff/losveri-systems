@@ -29,7 +29,7 @@ The row count (`n_unpriced`) is threaded through the per-instrument, combined, a
 rollups so the caveat cannot be dropped silently at any later aggregation step — it appears as an
 explicit `(N unpriced)` suffix wherever a net total is rendered.
 
-This is the same design property named in [VERIFICATION.md](../../../VERIFICATION.md) and
-[METHOD.md](../../../METHOD.md) for the whole repo — *"fail open to null, never fabricate"* —
+This is the same design property named in [VERIFICATION.md](../../../../VERIFICATION.md) and
+[METHOD.md](../../../../METHOD.md) for the whole repo — *"fail open to null, never fabricate"* —
 applied to a reporting rollup rather than an engine decision: a row that cannot be honestly priced
 is named as missing from the total, not folded into it.
