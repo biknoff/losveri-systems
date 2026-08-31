@@ -37,7 +37,7 @@ Ed25519/EDDSA signature is small regardless of the signed payload's size — the
 from 4.8KB (Phase 0, a bootstrap envelope with few dependency files) to 21.4KB (Phase 4, the
 largest phase's V_is binding evidence and dependency set).
 
-## Adjacent: 50 receipt files
+## Adjacent: 50 receipt files — one folder in a much larger corpus
 
 The build-discipline receipts folder (`receipts/`, a separate but related practice — every
 commissioned agent produces a receipt before its work is considered complete, per
@@ -46,3 +46,9 @@ and one `README.md` documenting the naming convention
 (`HANDOFF_<commission-name>_to_operator_<YYYY-MM-DD>.md`) and the reconstruction-caveat rule (a
 receipt written retroactively for un-receipted prior work is banner-marked
 `RECONSTRUCTED FROM SELF-BRIEF`, never passed off as contemporaneous).
+
+That 50 is one directory, not the whole corpus. A direct re-count across both machines that hosted
+this build (the research host and a separate, only-partially-overlapping Mac-side cache) finds on the order of
+150-220 distinct handoff/audit/dispatch documents total, spread across several mirrored directory
+trees that don't fully sync with each other. Full accounting, including three additional real
+integrity catches drawn from this same `receipts/` folder: `corpus_scale_and_more_catches.md`.

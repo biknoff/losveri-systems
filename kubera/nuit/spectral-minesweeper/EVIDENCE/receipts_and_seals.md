@@ -29,6 +29,11 @@ Two things the naming convention itself proves: (1) every handoff is addressed
 handoffs are dated and stage-scoped, not a single monolithic log — each pipeline
 move gets its own receipt.
 
+This 50-file count is one directory, not the whole handoff corpus — a wider,
+multi-machine re-count (and three concrete integrity catches pulled from this
+same folder) lives in the governance project, not duplicated here:
+`kubera/nuit/build-method-governance/EVIDENCE/corpus_scale_and_more_catches.md`.
+
 ## Seals: 17 (count only)
 
 `seals/` holds 17 entries. Per the sourcing constraint for this reconstruction,

@@ -64,6 +64,7 @@ output.
 | Claim | Evidence |
 |---|---|
 | 8 sealed envelope/signature pairs on disk (17 files incl. the public key) — file inventory | [`EVIDENCE/seals_inventory.md`](EVIDENCE/seals_inventory.md) |
+| Corpus scale re-verified (~150-220 distinct handoffs across two machines, not just one 50-file folder) + 3 more real integrity catches | [`EVIDENCE/corpus_scale_and_more_catches.md`](EVIDENCE/corpus_scale_and_more_catches.md) |
 | Manual GPG verification actually ran, phase after phase — real "Good signature" / `exit=0` transcripts | [`EVIDENCE/gpg_verification_transcript.md`](EVIDENCE/gpg_verification_transcript.md) |
 | The predecessor hash chain, root to tip, including the one deliberate branch (rebind, not overwrite) | [`EVIDENCE/hash_chain_provenance.md`](EVIDENCE/hash_chain_provenance.md) |
 | Mortal-architect succession: Architect XI stand-down → XII → XIII spawn, in the architects' own words | [`EVIDENCE/mortal_architect_succession.md`](EVIDENCE/mortal_architect_succession.md) |

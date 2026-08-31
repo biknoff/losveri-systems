@@ -19,6 +19,8 @@ Systems are easier to trust when you can see their scars. Three threads.
 
 The self-corrections are the credential. A research program that documents its own wrong turns is one whose right turns you can believe.
 
+**A note on who's doing the correcting.** Both v3 and the v4 skeleton were authored through a named AI consultation role, not a person — but not the same role. "Daniel" (v3-era) is a recurring, numbered design-architect CLI role: spawned per Room via a shell alias, Sonnet 4.6 by default, bounded to design-substrate paths only, never code (`DANIEL_CLI_PROTOCOL_v1.md`), the same discipline as the mortal-architect protocol one level down — Daniel-0 opened the v3 blueprint, Daniel-2 through Daniel-4 carried later Rooms and governance briefs. "Elder" (the v4 skeleton) is a different, one-off role: a single long-conversation consultation explicitly commissioned to catch and correct v3's own drift, and its document says so about itself — "Elder authored this at high conversation-length; treat every specific as provisional." They are not the same lineage under different names; they're sequential and distinct — Daniel is the sustained, protocol-governed architect role that produced v3, Elder is the higher-effort, self-disclaimed corrective pass that produced v4's reframing of what v3 got wrong.
+
 ## 3. Fred: the stack followed the epistemology
 
 - **Hume era (bot v6.x):** voice notes analyzed through a hosted affect API — appropriate when benchmarking against *population* norms.
