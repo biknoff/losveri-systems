@@ -30,7 +30,7 @@ flowchart LR
     MEM -.->|escalate deeper<br/>only on demand| ABX
 
     ABX -.->|consult| CHRIS["Chris<br/>(2nd house, finance)"]
-    ABX -.->|consult| KUBERA["Kubera<br/>(5th house, work/quant)"]
+    ABX -.->|consult| KUBERA["Kubera<br/>(work/quant realm)"]
     ABX --> TTS["TTS<br/>(chunked Gemini,<br/>Leda voice)"]
     TTS --> OUT["voice reply<br/>(Telegram sendVoice)"]
 ```
@@ -75,6 +75,6 @@ flowchart LR
 
 ## Advising through the Pillar
 
-Abraxas doesn't answer in a vacuum: every recommendation is framed through [the Pillar](../README.md#the-pillar) — the five family principles its boot gate requires on disk — and through consultation with the house-lords (money → Chris; work → Kubera). The contract language is explicit: agents give informed insights, observations, and appreciations; **verdicts belong to the operators**. That division — constitution above, specialist counsel beside, human decision at the end — is the Council's whole design.
+Abraxas doesn't answer in a vacuum: every recommendation is framed through [the Pillar](../README.md#the-pillar) — the five family principles its boot gate requires on disk — and through consultation with the realm agents (money → Chris; work → Kubera). The contract language is explicit: agents give informed insights, observations, and appreciations; **verdicts belong to the operators**. That division — constitution above, specialist counsel beside, human decision at the end — is the Council's whole design.
 
 **Adoption:** 194 scheduled morning-brief artifacts (weekday 6am job, running since 2026-03-17, still logging) plus an archive of voice replies; tooling revised as recently as July 2026. Formal usage instrumentation beyond artifact counts: not yet built — stated as a gap.
