@@ -1,10 +1,14 @@
 # Los Verí Systems
 
-**Leo & Mariele Verí — operator + AI-architect builds, 2025–2026.**
+A verification-first approach to building and operating production systems with AI agents — proven where being wrong is expensive: a live trading engine, a household of AI copilots that non-technical people use every day, and a research program disciplined enough to publish its own mistakes.
 
-> **If you're evaluating me for a role:** two people design, build, and operate production systems with AI agents — and supervise them safely. That means: internal-ops AI copilots for a small operating company used daily by non-technical operators (a finance ledger driven by voice notes, a shared comms gateway, multilingual staff coordination); a live, real-money trading stack with independent supervision that structurally cannot author trades; and a verification culture — byte-parity certification, adversarial audits, cryptographically sealed handoffs — that makes every claim in this repo checkable. Three docs show how: [METHOD.md](METHOD.md) (how we work with AI), [VERIFICATION.md](VERIFICATION.md) (how we know it works), [STORY.md](STORY.md) (how it fits together).
+**What this repo proves, concretely:**
+- Every change to the live trading engine is rehearsed against a byte-identical copy of the running system before it touches production — not "should behave the same," mechanically proven identical on every build.
+- The processes watching that engine can flatten it, halt it, and page a human — and that is *all* they can do. None of them can place, modify, or author an order; the boundary is structural, not a policy.
+- Internal AI tools — a finance ledger driven by voice notes, a shared multilingual comms gateway, a voice-interfaced daily coordinator — are in real daily use by people who don't write code, not demos run once for a screenshot.
+- Every claim above has an evidence file sitting next to it in this repo: a certification log, a real config diff, a redacted code excerpt. Nothing here asks to be taken on faith.
 
-The through-line: **research into latent space** — disciplined search for latent structure, whether the hidden thing is a trading edge, a prosodic baseline, or a gesture in a conductance field.
+This was all built and is still run by two people. [METHOD.md](METHOD.md) explains how; [VERIFICATION.md](VERIFICATION.md) explains how every claim here gets checked; [STORY.md](STORY.md) explains how the pieces connect (including the names — Abraxas, NUIT, HADIT — which are covered in one page and never load-bearing for understanding what a thing does).
 
 This repo is a **curated evidence archive**, not a code mirror. The working repos are private (live capital, personal data). Each project here states what runs, what was built, and what is only designed — with evidence for every claim. Honesty is the aesthetic.
 
@@ -23,7 +27,7 @@ This repo is a **curated evidence archive**, not a code mirror. The working repo
 | Project | One line | Status | Where |
 |---|---|---|---|
 | **HADIT engine** | Rust execution engine + orchestrator for ~14 live strategies; witness logs, watchdog, nightly recon | RUNNING (real money) | `kubera/hadit/engine/` |
-| **HADIT Cockpit** | The family's own web trading cockpit — ~34k lines, 15 pages, 27 named data feeds, real-time watcher/watchdog integration | RUNNING | `kubera/hadit/cockpit/` |
+| **HADIT Cockpit** | The family's own web trading cockpit — each of 27 data panels degrades independently rather than taking the whole surface down; watchers/watchdog push status in real time, not polled | RUNNING | `kubera/hadit/cockpit/` |
 | **Time Travel Mirror** | Backtests compiled against the live engine's own bytes (372/373 files identical, proven per build); every deploy rehearsed here first; nightly reconciliation | BUILT | `kubera/nuit/time-travel-mirror/` |
 | **NUIT watchers** | Independent supervision fleet over the live engine — 9 timers + a cron durable layer; the watcher cannot author what it watches | RUNNING | `kubera/nuit/watchers/` |
 | **Spectral Minesweeper** | Discovery methodology: latent generative terrain from the geometry of outcomes; Cold-Firing validation chain ran; SEER/PROBE designed | BUILT + DESIGNED | `kubera/nuit/spectral-minesweeper/` |

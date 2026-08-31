@@ -71,7 +71,7 @@ flowchart LR
 | Claim | File |
 |---|---|
 | Engine LOC / crate map, live systemd status | `EVIDENCE/01_engine_status_and_loc.md` |
-| Full Rust surface (~215-220k lines incl. an 11-crate verification harness fleet) + real automation-unit count (47) | `EVIDENCE/09_verification_harness_fleet_and_automation_scale.md` |
+| The wider verification surface: an 11-crate harness fleet checking live canon consistency, and the real automation-unit count (47) behind it | `EVIDENCE/09_verification_harness_fleet_and_automation_scale.md` |
 | Byte-parity certification methodology + a real honest red, root-caused | `EVIDENCE/02_byte_parity_certification.md` |
 | Independent equity watchdog design (flatten/halt/latch, human-only clear) | `EVIDENCE/03_equity_watchdog_design.md` |
 | Append-only witness JSONL sample (redacted) | `EVIDENCE/04_witness_spine_sample.md` |

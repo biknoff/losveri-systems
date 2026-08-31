@@ -7,8 +7,8 @@
 | **Bot** — Telegram voice-note assistant (v6.3.8, Hume-era lineage → later Gemini migration) | **RUNNING** (event-driven; watcher log fires through 2026-08-24, local poller log active through 2026-08-30) |
 | **Detector** — deterministic openSMILE/eGeMAPS vocal-dysregulation pipeline | **BUILT+DORMANT** (validated 2026-04-10; scoring untouched since) |
 
-Fred is the somatic layer: the agent that measures the voice itself, because the family interacts by
-voice and no text model captures what's in how something is said. Fred is **two systems, stated as
+Fred measures how something is said, not just what — a voice-analysis system, because the family interacts by
+voice and no text model captures that signal. Fred is **two systems, stated as
 two, with different current liveness — that difference is reported precisely, not smoothed over**.
 The first is a voice-note Telegram bot — transcribe, respond, execute the fast stuff (like an
 expense) before the slow, affective reply — running today as four always-on launchd jobs on the

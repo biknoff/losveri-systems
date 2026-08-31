@@ -1,48 +1,33 @@
-<!-- What: (1) the real total Rust surface across every distinct project on the execution+research
-     hosts, verified by direct `find`+`wc -l` (excluding target/ and duplicate worktree snapshots);
-     (2) the real automation-unit count on each host. Corrects an earlier undersell. Redacted:
-     none — these are structural counts, not strategy content. -->
+<!-- What: (1) what the verification harness fleet checks and why it's structured as many small
+     crates rather than one; the real Rust scale is included as supporting detail, not the
+     headline. (2) the real automation-unit count on each host. Redacted: none — structural counts
+     and behavior, not strategy content. -->
 
-## The Rust surface is bigger than one crate map — and smaller than a naive sum
+## One purpose-built check per live scenario, not one big test suite
 
-`01_engine_status_and_loc.md` gives the core engine's crate-level LOC from one build clone
-(58,585). That number is real but incomplete in two ways worth stating precisely rather than
-rounding away:
+Beyond the core engine (`01_engine_status_and_loc.md`), a separate fleet of **11 hash-distinct
+verification harness crates** exists — each its own real Cargo project, each independently built
+to check exactly one reconciliation or canon-consistency question against live venue data:
+per-account money-movement reconciliation, per-symbol quantity-map verification, duplicate-guard
+checks, queue-position canon checks. The design choice worth naming is *why eleven crates and not
+one*: each harness fails independently and says precisely which live scenario it caught, rather
+than one shared test binary where a failure requires triage to find the actual scenario at fault.
+One of the eleven is the [Time Travel Mirror](../../nuit/time-travel-mirror/) (`bugatti_wave3_wt`),
+already documented as its own project; the other ten do the same category of work and had not
+previously been surfaced in this repo.
 
-1. **The same 5 crates exist at slightly different sizes across several trees** — the deployed
-   runtime tree, the canonical build-source tree, and this repo's own build clone all differ by a
-   few thousand lines at any given moment, because they're deliberately not always in lockstep
-   (see `06_deploy_discipline_canon.md`'s canon-vs-runtime separation). That variance is a feature
-   of the deploy discipline, not measurement error — quoting one tree's number as *the* number
-   would imply a precision the multi-tree design doesn't have.
-2. **A second, genuinely separate body of Rust exists**, never previously counted: **11
-   hash-distinct per-scenario/per-account verification harness crates**, each its own real Cargo
-   project, each independently built to check one specific reconciliation or canon-consistency
-   question against live venue data — not copies of the core engine, and not test fixtures.
-   Verified directly (`find <root> -name '*.rs' | xargs wc -l`, `target/` excluded, each root
-   confirmed to have a distinct git/file hash from its siblings):
+*A note on withheld names:* individual crate names encode which live account/scenario each
+harness checks — naming them precisely would describe live account topology, which this repo's
+redaction policy keeps out. What each harness checks and why the fleet is shaped this way is the
+evidence; the per-crate identity is not needed to prove it.
 
-   | Harness | Lines |
-   |---|---|
-   | (the largest 7, names withheld here as internal scenario labels — see note below) | — |
-   | **Total, 11 distinct crates** | **124,206** |
-
-   One of these eleven is the [Time Travel Mirror](../../nuit/time-travel-mirror/)
-   (`bugatti_wave3_wt`) already documented as its own project. The other ten are siblings doing the
-   same category of work — per-account money-movement reconciliation, per-symbol quantity-map
-   verification, duplicate-guard checks, queue-position canon checks — that this repo had not
-   previously surfaced at all.
-
-   *A note on the withheld names:* the individual crate names encode which live account/scenario
-   each harness checks (e.g. a specific multi-account money-sweep case, a specific symbol's
-   quantity-map edge case) — naming them precisely would describe live account topology, which
-   this repo's redaction policy keeps out. The count, the aggregate LOC, and the category of work
-   are the evidence; the per-crate identity is not needed to prove the claim.
-
-**Combined, verified, non-duplicated Rust total across both hosts: roughly 215,000–220,000
-lines** — core engine + spirit roster + the verification harness fleet + the mirror's shim broker.
-This excludes ~9 further directories that are simply full snapshots of the core engine at
-different points in time (deliberately not summed — that would double-count, not add new code).
+For reference, not as the point: this fleet is 124,206 lines, and the same variance discipline
+that separates the deployed runtime tree from the canonical build-source tree (`06_deploy_discipline_canon.md`)
+means the core engine's own crate-level count differs by a few thousand lines depending which tree
+you measure — quoting one number as *the* number would imply a precision the multi-tree deploy
+design doesn't have. Total real, non-duplicated Rust across both hosts lands around 215-220k
+lines if a single figure is wanted; ~9 further directories are full snapshots of the core engine
+at different points in time and are deliberately excluded from that count, not summed into it.
 
 ## Automation units — also undercounted
 
