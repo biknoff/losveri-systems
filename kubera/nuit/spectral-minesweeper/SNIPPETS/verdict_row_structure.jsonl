@@ -1,0 +1,21 @@
+// file: SNIPPETS/verdict_row_structure.jsonl
+// source: cold_firing_cf11_v_is/v_is_verdicts.jsonl and cold_firing_cf11_v_oos/v_oos_verdicts.jsonl
+// (5th-house-kubera, branch cocktail-v3), dated 2026-05-11.
+// FIELD NAMES are real. All numeric VALUES are replaced with <redacted> — pf, n, expR,
+// win_rate, per-year breakdowns, and the `config` block (which contains strategy
+// parameters, entry/exit windows, stop sizing) are trade-secret and never shown here.
+// Row counts and dates are real; see EVIDENCE/v_chain_verdicts_structure.md.
+
+// --- V_IS row shape (in-sample gate; 360 rows in cf11's v_is_verdicts.jsonl) ---
+{"candidate_id": "<opaque_token>", "dow": "<redacted>", "pf": "<redacted>", "n": "<redacted>", "expR": "<redacted>", "win_rate": "<redacted>", "per_year": {"<year>": {"pf": "<redacted>", "n": "<redacted>"}}, "year_health_grade": "<enum: e.g. WEAK|CONCENTRATED|...>", "tier": "<enum: e.g. CULL|PASS>", "config": "<redacted trade-secret block>"}
+
+// --- V_OOS row shape (out-of-sample gate; 2 rows in cf11's v_oos_verdicts.jsonl —
+//     both survivors of V_IS, both FAILED here; no candidate advanced to V_stress) ---
+{"candidate_id": "<opaque_token>", "is_pf": "<redacted>", "is_n": "<redacted>", "oos_pf": "<redacted>", "oos_n": "<redacted>", "oos_expR": "<redacted>", "oos_per_year": {"<year>": {"pf": "<redacted>", "n": "<redacted>"}}, "oos_year_health_grade": "<enum>", "is_oos_pf_parity": "<redacted>", "verdict": "<enum: PASS|FAIL>", "fail_reasons": ["<pre-declared gate name, e.g. PF_oos<threshold, parity>threshold, grade=WEAK>"]}
+
+// --- V_STRESS row shape (stress gate; 0 rows for cf11 — the chain correctly produced
+//     nothing to stress-test once both V_OOS candidates failed) ---
+// Same family as V_OOS: {candidate_id, is/oos summary fields, stress-condition fields, verdict, fail_reasons}
+// No stress rows exist for this cf to excerpt; the empty file itself is the evidence —
+// gates that never pass anything downstream when nothing survives is what a
+// pre-declared, non-cherry-picking pipeline looks like.
