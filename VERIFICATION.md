@@ -23,7 +23,7 @@ The answer to "how do you know it works?" — asked of every system here, answer
 ## In the research layer (epistemic integrity)
 
 - **The V-chain** — candidate strategies pass staged validation gates (in-sample → out-of-sample → stress → manifest), each gate with pre-declared criteria; verdict files are on disk, dated.
-- **Mongoose determinism** — ~21 research workers, idempotent by contract: re-run must be hash-identical or the pipeline halts.
+- **Mongoose determinism** — 20 deterministic research workers, idempotent by contract: re-run must be hash-identical or the pipeline halts.
 - **Six-state contract classifier** — every research claim carries an explicit state; an interpreter never fabricates a number.
 - **Cryptographic sealing** (at its fullest) — 9/9 GPG signatures verify over the sealed record; an 8-link predecessor hash chain binds the sequence; a human-clear `LEDGER_HALT` gate stops the line on integrity doubt. Stated honestly: the automated verifier was never built (verification was run manually), and a single signing key was used. (`kubera/nuit/build-method-governance/`)
 
