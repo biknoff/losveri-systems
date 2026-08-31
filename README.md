@@ -1,5 +1,11 @@
 # Los Verí Systems
 
+**If you're evaluating me for technical program / AI systems work, start here (60 seconds):**
+- **[VERIFICATION.md](VERIFICATION.md)** — how I know a launch is safe
+- **[METHOD.md](METHOD.md)** — how I coordinate AI-built technical work
+- **[HADIT](kubera/hadit/engine/)** — one end-to-end production case
+- **[DECISIONS.md](kubera/hadit/engine/DECISIONS.md)** — how tradeoffs and rejected alternatives are recorded
+
 A verification-first approach to building and operating production systems with AI agents — proven where being wrong is expensive: a live trading engine, a household of AI copilots that non-technical people use every day, and a research program disciplined enough to publish its own mistakes.
 
 **What this repo proves, concretely:**
