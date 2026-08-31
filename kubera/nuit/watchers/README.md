@@ -67,7 +67,7 @@ or halt and latch, with the latch cleared only by a human.
 
 | Claim | Evidence |
 |---|---|
-| 9 systemd watcher timers firing ~every 60s, live today | [`EVIDENCE/timer_table.md`](EVIDENCE/timer_table.md) |
+| 9 systemd watcher timers firing ~every 60s, live today (+ 7 more timers on the same host for adjacent, non-watcher automation — see below) | [`EVIDENCE/timer_table.md`](EVIDENCE/timer_table.md) |
 | Cron durable layer + 3h backstop, re-armed and running | [`EVIDENCE/cron_durable_layer.md`](EVIDENCE/cron_durable_layer.md) |
 | Defense-in-depth: one watcher per failure class | [`EVIDENCE/failure_class_matrix.md`](EVIDENCE/failure_class_matrix.md) |
 | Structural boundary: read-only against the execution host, zero order verbs | [`EVIDENCE/readonly_boundary.md`](EVIDENCE/readonly_boundary.md) |
@@ -79,3 +79,16 @@ or halt and latch, with the latch cleared only by a human.
 
 *Identifiers, credentials, hostnames, chat recipients, strategy leg names, commit shas, and P&L
 are redacted throughout; every `EVIDENCE/` file states what was redacted and why at its top.*
+
+## The full automation picture on this host
+
+This project scopes to the 9 failure-class watchers by design (each is a distinct alert/halt
+detector; bundling unrelated jobs into "the watcher fleet" would blur that boundary). The research
+host runs **20 distinct scheduled units total** (16 systemd timers + 4 cron lines), verified by
+direct count. The other 7 timers are real, live, and NOT part of this fleet's alert/halt design —
+they belong elsewhere in this repo or are further automation surface not yet its own evidence
+entry: `rust-recon-daily` and `timetravel-registry` → [Time Travel Mirror](../time-travel-mirror/);
+`q90-tg-poller`, `regime-daily`, `forward-parity`, `delta-spirit` → research/signal tooling
+adjacent to [Spectral Minesweeper](../spectral-minesweeper/), not independently evidenced here.
+Stated plainly rather than folded into a bigger "watcher" number that would overstate what each
+one actually does.

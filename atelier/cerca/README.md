@@ -51,13 +51,25 @@ channels are the input to a 49-form confidence-scored gesture grammar,
 which drives the generative sound and light engine. Full detail:
 [ARCHITECTURE.md](ARCHITECTURE.md).
 
-## Photos
+## Photos, and the production scale behind them
 
 ![CERCA install](EVIDENCE/cerca_photo_1.jpg)
 ![CERCA install](EVIDENCE/cerca_photo_2.jpg)
 
 *Two of 8 web-size photos on the operator's archive (2025-06-25 shoot);
 selected as the two smallest files. See [EVIDENCE/README.md](EVIDENCE/README.md).*
+
+These 8 web photos are the curated tip of a real production archive: **538 RAW photographs and
+106 video clips (69GB)** from the same install shoot sit on the operator's archive drive — a
+professional-scale documentation effort, not a phone-photo afterthought. Alongside the Arduino
+firmware, a full **Cycling '74 Max/MSP + Ableton Bidule signal-routing rig** exists for the
+piece's audio side (patches for binaural rendering, inter-process audio routing, a SuperCollider
+communication test, a gesture test harness, and a verified MIDI environment) — CERCA's sound
+engine is a real, iterated DSP rig, not a placeholder. Two sibling beacon-hardware sketches
+(`Beacon`, `BeaconII`) and an in-progress JUCE-framework app build (`CercaJuce`) round out a
+build that spans embedded firmware, live signal routing, and native app tooling. None of the RAW
+photo/video/patch material is reproduced here (bulk binary media, not evidence text); the counts
+above are cited as scale evidence, verified by direct directory listing.
 
 ## Patent story (stated exactly)
 
