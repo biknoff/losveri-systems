@@ -4,7 +4,7 @@ Not "AI wrote our code." A specific working discipline, developed across two yea
 
 ## The shape of the work
 
-- **Operator + architect.** The operators (Leo & Mariele) own intent, requirements, risk decisions, and final acceptance. AI works as architect and builder — but commissioned, bounded, and audited, never free-running.
+- **Operator + architect.** The operators (Leo & Mariele) own intent, requirements, risk decisions, and final acceptance. AI works as architect and builder — but commissioned, bounded, and audited, never free-running. Division of labor, broadly: **Leo** owns research direction, system architecture, evaluation logic, and signing/final acceptance; **Mariele** owns operator-class engineering and architect commissioning. Both operate the live systems daily.
 - **Bounded commissions.** Work is delegated as scoped tasks with explicit acceptance checks, allowed surfaces, and required evidence. An agent that can't cite evidence for a claim doesn't get the claim into the record.
 - **Fresh-eyes audit per phase.** Every substantive change is reviewed by an auditor that did not write it, before it integrates — and for anything touching live money, before it deploys. Audits have teeth: findings block until resolved (see VERIFICATION.md for a real example: an over-attribution bug caught by audit in an already-"working" change).
 - **Handoffs as artifacts.** Sessions end with written handoff receipts — objective, decisions, evidence, open risks — so the next session (human or AI) starts from record, not recollection. At its most rigorous this became cryptographic: hash-chained, GPG-sealed handoffs across the AI-session boundary (`kubera/nuit/build-method-governance/`).

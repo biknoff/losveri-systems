@@ -47,7 +47,7 @@ Nine registered agent contracts, each with the same fixed shape (see `SNIPPETS/a
 }
 ```
 
-Abraxas sits at the `meta_layer`, above the planning/execution pipeline (GARUDA/MUSHAKA) and above the domain house-agents it consults (FRED, CHRIS, KUBERA, FAY) — matching the "lord of lords, consults not merges" design stated in `STORY.md` and this project's README.
+Abraxas sits at the `meta_layer`, above the planning/execution pipeline (GARUDA/MUSHAKA) and above the domain agents it consults (FRED, CHRIS, KUBERA, FAY) — matching the "one coordinator, consults not merges" design stated in `STORY.md` and this project's README.
 
 ## routing_rules keys
 

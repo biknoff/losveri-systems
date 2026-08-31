@@ -91,3 +91,6 @@ The 2026-07-08 certification sweep record was located on the execution host
 recorded as "no cert harness exists (precisely, not fabricated)." Redacted excerpt in
 `EVIDENCE/02`, alongside real harness output and a second honest-red example from a 2026-08-10
 independent audit.
+
+---
+*A note on the service name: the live engine runs under a systemd unit whose name ends in `-demo` — a historical artifact from its cautious first deployment that was never renamed (renaming a live-money unit is deferred to a flat maintenance window, deliberately). The unit's own description string says what it is. We flag it here because label-equals-substance cuts both ways.*

@@ -1,6 +1,9 @@
 # Los Verí Systems
 
 **Leo & Mariele Verí — operator + AI-architect builds, 2025–2026.**
+
+> **If you're evaluating me for a role:** two people design, build, and operate production systems with AI agents — and supervise them safely. That means: internal-ops AI copilots for a small operating company used daily by non-technical operators (a finance ledger driven by voice notes, a shared comms gateway, multilingual staff coordination); a live, real-money trading stack with independent supervision that structurally cannot author trades; and a verification culture — byte-parity certification, adversarial audits, cryptographically sealed handoffs — that makes every claim in this repo checkable. Three docs show how: [METHOD.md](METHOD.md) (how we work with AI), [VERIFICATION.md](VERIFICATION.md) (how we know it works), [STORY.md](STORY.md) (how it fits together).
+
 The through-line: **research into latent space** — disciplined search for latent structure, whether the hidden thing is a trading edge, a prosodic baseline, or a gesture in a conductance field.
 
 This repo is a **curated evidence archive**, not a code mirror. The working repos are private (live capital, personal data). Each project here states what runs, what was built, and what is only designed — with evidence for every claim. Honesty is the aesthetic.
@@ -27,9 +30,9 @@ This repo is a **curated evidence archive**, not a code mirror. The working repo
 | **HADIT Miami** | Multi-account MT5 trading service (connect a broker, trade, copy-trade); external users trade real money on it | RUNNING | `kubera/hadit/miami/` |
 | **i-ii.trade** | The product: trade, draw, drop voice notes on the chart, share with friends — "together"; or run your strategy scheduler — "alone" | RUNNING (early product) | `kubera/hadit/i-ii-trade/` |
 | **HADIT ⁄ NT8 (Chicago)** | The origin: Python strategy logic bridged into NinjaTrader 8 via a C# DLL, live-traded, then deliberately outgrown | BUILT+RETIRED | `kubera/hadit/nt8-chicago/` |
-| **Abraxas** | The lord of lords: the voice-interfaced agent the family governs its life through | RUNNING (daily) | `council/abraxas/` |
-| **Kubera** | The 5th-house quant-supervisor agent (formerly *Leona*) — house-lord of all the work builds below | BUILT+DORMANT (agent); its house runs on | `kubera/` |
-| **Fred** | The unconscious: deterministic prosody measurement from longitudinal voice notes; decisions gate on the speaker's prosodic floor | PAUSED (verified) + detector BUILT+DORMANT | `council/fred/` |
+| **Abraxas** | The coordinating agent — the one agent the family talks to (by voice), which consults the domain agents below | RUNNING (daily) | `council/abraxas/` |
+| **Kubera** | The quant-intelligence agent (formerly *Leona*) — the work realm's advisor, above all the trading builds below | BUILT+DORMANT (agent); its realm runs on | `kubera/` |
+| **Fred** | The somatic layer: deterministic prosody measurement from longitudinal voice notes; decisions gate on the speaker's prosodic floor | PAUSED (verified) + detector BUILT+DORMANT | `council/fred/` |
 | **Chris** | Household finance operator: voice-note an expense, it lands in the ledger | RUNNING | `council/chris/` |
 | **Hanuman** | The comms gate: WhatsApp/Gmail protocols every agent invokes; sub-second local voice pipeline | RUNNING | `council/hanuman/` |
 | **Fay** | Domestic coordination in Haitian Creole with the household staff | RUNNING (~months of daily use) | `council/fay/` |

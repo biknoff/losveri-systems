@@ -1,4 +1,4 @@
-# Chris — 2nd House, Household Finance
+# Chris — Household Finance
 
 **Status:** RUNNING on Vertex AI Agent Engine (ADK) · bank feed BUILT+WIRED · reconciliation DESIGNED, not built
 **Part of:** the Council — see [STORY.md](../../STORY.md)
@@ -9,7 +9,7 @@ A second, independent thread reads bank and card transactions directly: a Simple
 
 Every output Chris produces — a parsed transaction, a correction, an architectural instruction — passes through a **meta-cognitive review layer** before it's trusted: a second pass that classifies intent, scores confidence, and can trigger self-healing before anything is written.
 
-For money decisions bigger than "log this expense," Chris is a source [Abraxas](../abraxas/) consults — the lord of lords delegates financial judgment to the specialist that owns the domain, the same pattern used across the Council.
+For money decisions bigger than "log this expense," Chris is a source [Abraxas](../abraxas/) consults — the coordinator delegates financial judgment to the specialist that owns the domain, the same pattern used across the Council.
 
 ```mermaid
 flowchart LR
@@ -40,3 +40,5 @@ flowchart LR
 See [ARCHITECTURE.md](ARCHITECTURE.md) for the full system shape and [DECISIONS.md](DECISIONS.md) for what was rejected and why.
 
 *Redactions: no financial data, balances, budgets, account names/numbers, bank names, SimpleFIN tokens or URLs, GCP project IDs, Vertex resource names, or family personal content appear anywhere in this directory. See each evidence file's header for what was redacted from that specific artifact.*
+
+**Adoption:** in daily household use (expenses logged by voice note land in the live ledger); usage counts are not yet instrumented — stated as a gap rather than estimated.

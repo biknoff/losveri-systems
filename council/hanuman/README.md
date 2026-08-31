@@ -58,3 +58,5 @@ Hanuman moves messages; it does not decide what they say or who they're for. `wh
 - [DECISIONS.md](DECISIONS.md) — choices and rejected alternatives.
 - [Fay](../fay/) — the clearest consumer: decides content and language, hands delivery to Hanuman.
 - [STORY.md](../../STORY.md) · [council/README.md](../README.md)
+
+**Adoption:** carries every other agent's outbound traffic (Fay's staff dispatches, Abraxas's deliveries) — adoption is structural: if the Council is used, Hanuman is used.

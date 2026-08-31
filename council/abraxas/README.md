@@ -4,7 +4,7 @@
 
 ## What it is
 
-Abraxas is the lord of lords: the top of the Council (see [STORY.md](../../STORY.md)), the one house agent the family actually talks to, by voice, rather than a chat window. A voice note in — over Telegram — becomes a transcript, a reasoning pass grounded in a required constitution and a tiered memory of the household, optional consultation with the domain house-agents (Chris for money, Kubera for work/quant, Fred for prosody), and a spoken reply back out. It is not a chatbot with a system prompt; it is a CLI-launched process (`tools/abraxas`) that refuses to run at all if its constitution file is missing from disk — see the boot gate below.
+Abraxas is the coordinator: the top of the Council (see [STORY.md](../../STORY.md)), the one agent the family actually talks to, by voice, rather than a chat window. A voice note in — over Telegram — becomes a transcript, a reasoning pass grounded in a required constitution and a tiered memory of the household, optional consultation with the domain agents (Chris for money, Kubera for work/quant, Fred for prosody), and a spoken reply back out. It is not a chatbot with a system prompt; it is a CLI-launched process (`tools/abraxas`) that refuses to run at all if its constitution file is missing from disk — see the boot gate below.
 
 Abraxas sits at the Council's `meta_layer` — above the planning/execution pipeline (GARUDA, MUSHAKA) and above the domain agents it consults, never merging their work into itself. Nine agents (ABRAXAS, GARUDA, MUSHAKA, FRED, CHRIS, KUBERA, FAY, THOTH, SCRIBE) are registered with machine-readable contracts under this hierarchy; seven of them have working persona/constitution ("vessel") files on disk — direct evidence the twelve-house Council design is real and partially built, not aspirational (see `EVIDENCE/council_topology.md`).
 
@@ -76,3 +76,5 @@ flowchart LR
 ## Advising through the Pillar
 
 Abraxas doesn't answer in a vacuum: every recommendation is framed through [the Pillar](../README.md#the-pillar) — the five family principles its boot gate requires on disk — and through consultation with the house-lords (money → Chris; work → Kubera). The contract language is explicit: agents give informed insights, observations, and appreciations; **verdicts belong to the operators**. That division — constitution above, specialist counsel beside, human decision at the end — is the Council's whole design.
+
+**Adoption:** 194 scheduled morning-brief artifacts (weekday 6am job, running since 2026-03-17, still logging) plus an archive of voice replies; tooling revised as recently as July 2026. Formal usage instrumentation beyond artifact counts: not yet built — stated as a gap.

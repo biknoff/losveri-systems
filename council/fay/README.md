@@ -49,3 +49,5 @@ flowchart LR
 - [DECISIONS.md](DECISIONS.md) — choices and rejected alternatives.
 - [Hanuman](../hanuman/) — owns the WhatsApp transport Fay dispatches through; Hanuman never sees Fay's scheduling logic.
 - [STORY.md](../../STORY.md) · [council/README.md](../README.md)
+
+**Adoption:** dispatch corpus spans 2026-04-09 → 2026-07-20 on a steady multiple-times-per-week cadence — months of real household use, not a demo. Per-dispatch analytics: not instrumented — stated as a gap.
