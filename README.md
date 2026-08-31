@@ -23,6 +23,7 @@ This repo is a **curated evidence archive**, not a code mirror. The working repo
 | Project | One line | Status | Where |
 |---|---|---|---|
 | **HADIT engine** | Rust execution engine + orchestrator for ~14 live strategies; witness logs, watchdog, nightly recon | RUNNING (real money) | `kubera/hadit/engine/` |
+| **HADIT Cockpit** | The family's own web trading cockpit — ~34k lines, 15 pages, 27 named data feeds, real-time watcher/watchdog integration | RUNNING | `kubera/hadit/cockpit/` |
 | **Time Travel Mirror** | Backtests compiled against the live engine's own bytes (372/373 files identical, proven per build); every deploy rehearsed here first; nightly reconciliation | BUILT | `kubera/nuit/time-travel-mirror/` |
 | **NUIT watchers** | Independent supervision fleet over the live engine — 9 timers + a cron durable layer; the watcher cannot author what it watches | RUNNING | `kubera/nuit/watchers/` |
 | **Spectral Minesweeper** | Discovery methodology: latent generative terrain from the geometry of outcomes; Cold-Firing validation chain ran; SEER/PROBE designed | BUILT + DESIGNED | `kubera/nuit/spectral-minesweeper/` |
