@@ -13,6 +13,29 @@ Systems are easier to trust when you can see their scars. Three threads.
 
 ## 2. NUIT's intellectual lineage: a program that corrects itself in writing
 
+- **URR (2026-04-17, the actual predecessor — BUILT+RETIRED, superseded).** Before NUIT had the
+  name, there was URR: a single-pattern trading-research project (workspace `5th House/`) that
+  quietly became something bigger than the pattern it was chasing. Its own architecture document
+  states the reframe explicitly: *"The purpose is not a dashboard. The purpose is a reusable
+  research spine that converts every new backtest session into a sharper instrument for the
+  next one"* — and names its real success metric as "how complete is the engine template when the
+  next system arrives," not whether any one system was profitable. That is the same instinct that
+  later became Spectral Minesweeper's domain-agnostic discovery apparatus, stated a year earlier
+  in trading-specific words. Concretely, URR built: a real research console (a local web
+  dashboard, one shell, health-color-coded panels, a shared component template every new strategy
+  "lab" inherited for free instead of reinventing); a `stress_battery/` directory and a
+  `mechanism_discovery/` directory — pre-declared adversarial testing and competing-hypothesis
+  falsification, run against thousands of trades before a mechanism story was trusted; a
+  config-driven per-system tracking scheme (each candidate its own hashed config, its own health
+  status, re-scored on a cadence); and a formal, multi-party-signed deployment contract for its
+  first live-ready system — authored by Abraxas, approved by a human operator, audited and signed
+  off by a separate AI reviewer, status `LOCKED`. That contract's own header reads **"supersedes:
+  none (first NUIT deployment spec)"** — URR's own paper trail names itself the origin point of
+  the NUIT line, not a separate project quietly abandoned. (The mechanism URR investigated, and
+  its results, are exactly the "reconstructive detail" this repo's redaction policy keeps out —
+  what's shown here is the research infrastructure and governance, never the edge.) URR's pattern
+  family also has NT8-era indicator code in the Chicago lineage (§1) — one more place the two
+  lineage threads in this document are really one continuous build.
 - **v2 (2026-04):** the discovery apparatus stated in trading clothes — parameters, simulator, acceptance criterion. Correct instincts, under-stated generality. (An honest artifact: v2's original bytes are lost, but its hash survives inside a signed seal — the governance outlived the document.)
 - **v3:** a category error, made and then *caught*: the apparatus collapsed into simulation-based-inference-proper under ambient vocabulary pressure. The machinery drifted toward estimating posteriors when the actual target was discovering representations.
 - **v4 (skeleton):** the correction, in writing: Spectral is a *geometry-of-emergence* apparatus — discover the latent terrain representation, the manifestation families, and their correspondence from the geometry of outcomes. Trading named explicitly as proving ground, not definition (manufacturable manifestations, cheap outcomes, failures that cost money rather than people). SEER (terrain discovery) and PROBE (directed search) marked plainly: DESIGNED, not built. The Cold-Firing validation chain that ran — and its verdicts on disk — is what BUILT looks like here.

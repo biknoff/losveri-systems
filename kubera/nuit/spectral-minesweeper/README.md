@@ -102,6 +102,9 @@ yet executing.
 
 ## Evidence index
 
+- `EVIDENCE/predecessor_urr_project.md` — URR (April 2026), the predecessor project whose own
+  deployment contract names itself "the first NUIT deployment spec" — real dashboard, stress/
+  falsification testing, config-as-source-of-truth, multi-party sign-off, a project earlier
 - `EVIDENCE/v_chain_verdicts_structure.md` — V_is/V_oos/V_stress field names,
   row counts, dates (2026-05-11), values redacted
 - `EVIDENCE/mongoose_worker_inventory.md` — the 20 deterministic worker
