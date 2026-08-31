@@ -11,7 +11,7 @@
 > `{witness_dir}/{session_date}/{leg}.jsonl` — one append-only file per spirit per ET day. Schema
 > `hadit.ws2.witness_event/v1`, one JSON object per line.
 
-## One real event, redacted (from `witness/2026-07-21/spirit_mgc_c08.jsonl`, the execution host)
+## One real event, redacted (from `witness/2026-07-21/spirit_<leg>.jsonl`, the execution host)
 
 ```json
 {
@@ -29,9 +29,9 @@
   "instrument": "MGC.CME",
   "schema": "hadit.ws2.witness_event/v1",
   "source": "route_signal:send_plan_request",
-  "spirit": "spirit_mgc_c08",
+  "spirit": "spirit_<leg>",
   "state": "ORDER_PLACED",
-  "ticket": "44125828",
+  "ticket": "<redacted>",
   "ts_utc_ns": "<redacted>"
 }
 ```

@@ -52,13 +52,13 @@ HEAD: defa1bb1019ef46a4dd882c9c09bf2147b26b730
 --- envelope detached signature ---
 gpg: Signature made Mon Apr 27 12:45:00 2026 AST
 gpg:                using EDDSA key 2CDEE63DDA2B1D57F25EADE381A4D221CAA55FF1
-gpg: Good signature from "leo (daniel) <altamar.info@gmail.com>" [ultimate]
+gpg: Good signature from "leo <redacted>" [ultimate]
 exit=0
 
 --- tag signature (git verify-tag) ---
 gpg: Signature made Mon Apr 27 13:13:13 2026 AST
 gpg:                using EDDSA key 2CDEE63DDA2B1D57F25EADE381A4D221CAA55FF1
-gpg: Good signature from "leo (daniel) <altamar.info@gmail.com>" [ultimate]
+gpg: Good signature from "leo <redacted>" [ultimate]
 exit=0
 
 --- envelope hash recompute ---

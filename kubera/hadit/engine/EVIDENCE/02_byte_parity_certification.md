@@ -40,7 +40,7 @@ Per-spirit decision-layer certification replays a recorded oracle trace and diff
 computed decision state bar-for-bar:
 
 ```
-════════ spirit_mgc_c08 DECISION-LAYER CERTIFICATION ════════
+════════ spirit_<leg> DECISION-LAYER CERTIFICATION ════════
 trace span (ET date): 2026-05-31 -> 2026-06-19
 bars compared       : 11614 / 11614
 decision parity      : PASS (byte-parity)  (mismatched bars: 0)
@@ -58,7 +58,7 @@ CLOSED: 20 scenarios / 55 steps byte-exact; 20 arm geometries, 4 give-up paths, 
 
 ## A real "honest red" caught by this harness (independent audit, 2026-08-10, `K2_PACKAGE_BUILD_20260810.md`)
 
-The same certify family failed on a different bottle (`certify_mgc_rfd_g3`) during a build package's
+The same certify family failed on a different bottle (`certify_<leg>`) during a build package's
 own pre-deploy audit. The independent reviewer did not wave it through — they reproduced it, then
 traced the root cause: the oracle trace file predated a legitimate signal-dedupe change to the
 bottle, so the trace itself was stale, not the engine:

@@ -30,14 +30,14 @@ checks it). Clearing the latch is a HUMAN act: delete the file, restart the engi
 ```python
 GATEWAY = os.environ.get("WATCHDOG_GATEWAY", "tcp://127.0.0.1:7101")
 POLL_S = int(os.environ.get("WATCHDOG_POLL_S", "5"))
-STATE_DIR = "/home/hadit/hadit-ws2/state"
+STATE_DIR = "<state-dir>"
 LATCH_PATH = os.path.join(STATE_DIR, "equity_watchdog_latch.json")
 HEARTBEAT_PATH = os.path.join(STATE_DIR, "equity_watchdog_heartbeat.json")
 TG_CHATS = ["<redacted>", "<redacted>"]  # every alert to both operators
 
-DAY_ALERT_FRAC = 0.50   # of R_day -> Telegram alert
-DAY_TRIP_FRAC = 1.10    # of R_day (+ slippage headroom) -> FLATTEN + HALT + LATCH
-DAY_TRIP_MIN_USD = 400.0  # absolute floor so a tiny/missing R_day can't hair-trigger
+DAY_ALERT_FRAC = <redacted>   # of R_day -> Telegram alert
+DAY_TRIP_FRAC = <redacted>    # of R_day (+ slippage headroom) -> FLATTEN + HALT + LATCH
+DAY_TRIP_MIN_USD = <redacted>  # absolute floor so a tiny/missing R_day can't hair-trigger
 ```
 
 **What this proves:** the watchdog is a *separate process* (own systemd unit, own poll loop, "zero
