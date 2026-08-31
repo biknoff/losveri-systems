@@ -4,10 +4,10 @@
 # Redactions: none (paths only, no credentials).
 set -euo pipefail
 
-ROOT="/Users/leo/Los Veri"
+ROOT="<workspace-root>"
 GSD_BIN="${GSD_BIN:-/opt/homebrew/bin/gsd}"
 BOOTSTRAP_FILE="$ROOT/Agents/ABRAXAS_GSD_BOOTSTRAP.md"
-AGENTS_FILE="${ABRAXAS_AGENTS_FILE:-/Users/leo/.codex/agents.md}"
+AGENTS_FILE="${ABRAXAS_AGENTS_FILE:-<agents-config>}"
 CONTINUITY_FILE="$ROOT/Agents/ABRAXAS_CONTINUITY_MANIFEST.md"
 PILLAR_FILE="$ROOT/FIVE_PRINCIPLES.md"
 ECOLOGICAL_MODEL_FILE="$ROOT/Shared Knowledge/4th House/LOS_VERI_ECOLOGICAL_MEMORY_MODEL.md"
