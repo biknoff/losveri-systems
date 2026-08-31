@@ -18,7 +18,7 @@ a well-defined concept. See [`EVIDENCE/detector_feature_extraction_and_baseline_
 
 ## 3. Two systems, stated as two
 **Rejected: blurring the bot and the detector into one pitch.** The bot (a Telegram voice-note
-assistant, PAUSED) and the detector (a deterministic prosody-baseline pipeline, BUILT+DORMANT) are
+assistant, RUNNING) and the detector (a deterministic prosody-baseline pipeline, BUILT+DORMANT) are
 different codebases with different status, different validation, and different failure modes.
 Presenting them as one "Fred product" would let the bot's liveliness (or the detector's rigor)
 launder the other's actual status. Stated separately here — separate badges, separate evidence,

@@ -5,7 +5,7 @@ migration described below), but they are different codebases, at different point
 build/run spectrum, doing different jobs. This document describes each, then the one place they
 are designed to meet.
 
-## System A — the voice-note bot line (PAUSED, verified)
+## System A — the voice-note bot line (RUNNING)
 
 **What it does.** A Telegram bot that receives a voice note, transcribes it, and responds —
 including parsing and executing expense entries (the same expense-to-ledger function Chris now
@@ -32,14 +32,24 @@ lighter-weight model swap, a local-Whisper evaluation, a Gemini 3.7 Flash canoni
 thinking-budget tuning pass — each preserved as a dated backup file rather than overwritten. See
 [`EVIDENCE/migration_trail_and_cloud_hosting.md`](EVIDENCE/migration_trail_and_cloud_hosting.md).
 
-**Hosting.** Runs as a Cloud Run service (`python:3.11-slim`, `ffmpeg`/`libsndfile1` for audio,
-`FRED_ENABLE_HUME_FALLBACK` and `FRED_GEMINI_TRANSCRIPTION_MODEL` as runtime-selectable env vars —
-provider choice is a deploy-time knob, not a hard dependency baked into the code).
+**Hosting.** Two live deployment modes for the same bot, by design: a Cloud Run service
+(`python:3.11-slim`, `ffmpeg`/`libsndfile1` for audio, `FRED_ENABLE_HUME_FALLBACK` and
+`FRED_GEMINI_TRANSCRIPTION_MODEL` as runtime-selectable env vars — provider choice is a deploy-time
+knob, not a hard dependency baked into the code) that runs the Flask webhook, and a local
+long-running polling copy (`poll_runner.py`, launchd `KeepAlive`) for when the webhook is
+deliberately torn down — the runner's own docstring names the handoff "Path W protocol" so the two
+are never live against Telegram at the same time.
 
-**Status: PAUSED, verified working.** The bot is not currently receiving traffic in production,
-but its most recent state is a working, self-consistent codebase (its own startup log and
-Telegram greeting both self-report v6.3.8, matching the operator's record) — paused by choice, not
-abandoned mid-build.
+**Status: RUNNING, event-driven.** Four launchd jobs on the household Mac keep the bot line active
+day to day: a `WatchPaths` agent wired directly into the real macOS Voice Memos recordings folder
+(fires a one-shot processing pass on every new recording — its log shows real, clean-completing
+fires through 2026-08-24), the local Telegram poller itself (`KeepAlive`-restarted, log active
+through 2026-08-30), a 30s sync job, and a 60s inbox-bridge job. This is not inferred from a
+changelog — it is a live PID (`launchctl list`) and dated log output observed directly. See
+[`EVIDENCE/launchd_automation_and_live_activity.md`](EVIDENCE/launchd_automation_and_live_activity.md)
+for the full plist contents, the currently-loaded job table, and an honest read of what the logs do
+and don't show (the poller's most recent log lines are a recurring unhandled-exception error, not a
+clean success — reported as such, not smoothed over).
 
 ## System B — the deterministic prosody/dysregulation detector (BUILT+DORMANT)
 
@@ -84,9 +94,14 @@ replicated — proof-of-concept, stated as exactly that. See
 to zero between invocations, which is the literal, technical meaning of "dormant" here: nothing is
 running or billing until it is deliberately invoked again.
 
-**Status: BUILT+DORMANT.** Scoring code untouched since the 2026-04-10 validation event; the
-voice-note ingestion feeding its corpus kept running independently for months afterward. Proven
-once, deliberately parked, not decayed.
+**Status: BUILT+DORMANT.** Scoring code untouched since the 2026-04-10 validation event. The
+`Source Material` corpus directory backing that event holds 391 dated files spanning
+2026-03-17–2026-04-15 — a one-month batch gathered around the validation, not a continuously
+updated feed; no evidence of detector-specific activity was found past that window. (The bot
+line's own voice-note ingestion is separately, currently live — see System A above and
+[`EVIDENCE/launchd_automation_and_live_activity.md`](EVIDENCE/launchd_automation_and_live_activity.md)
+— but that liveness belongs to the bot, not to this detector's scoring pipeline; the two are not
+conflated here.) Proven once, deliberately parked, not decayed.
 
 ## Where the two systems are designed to meet
 
@@ -97,13 +112,15 @@ built**. The root [`STORY.md`](../../STORY.md) diagram and this project's own RE
 edge with a dashed line for exactly that reason: it is the honest state of the connection, not an
 aspiration dressed as a fact.
 
-## Paused vs. dormant — why two different words
+## Running vs. dormant — why two different words
 
-- **PAUSED** (the bot): a working, previously-live service, currently not receiving traffic, that
-  could be turned back on largely as-is.
+- **RUNNING** (the bot): four always-on launchd jobs, a live PID on the local poller, and dated log
+  activity through 2026-08-24 (watcher, clean completions) and 2026-08-30 (poller, still logging,
+  though its most recent lines are errors rather than clean success — see the evidence file).
 - **BUILT+DORMANT** (the detector): a validated pipeline, deliberately not re-run since its
-  validation event, its ingestion/corpus side still alive independently of its scoring side.
+  2026-04-10 validation event; no detector-specific activity found past its April corpus window.
 
 Both are honest states, and neither is "broken" or "abandoned" — the distinction is worth keeping
-because collapsing them into one status word would either overstate the bot's current activity or
-understate how proven the detector already is.
+precisely because the two systems' liveness is now genuinely different, not because one status word
+would be more flattering than the other. Collapsing them into one status would either overstate the
+detector's current activity or understate that the bot line is live, unglamorous errors and all.

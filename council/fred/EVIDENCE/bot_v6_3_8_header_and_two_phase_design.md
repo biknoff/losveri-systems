@@ -47,4 +47,5 @@ rather than scrubbed).
 
 **Status confirmed by this file:** the bot's own startup log line and Telegram greeting both
 self-report `v6.3.8`, matching the operator's stated version — this is the bot code as it stands
-today, PAUSED per operator record, not a stale artifact.
+today, RUNNING (see [`launchd_automation_and_live_activity.md`](launchd_automation_and_live_activity.md)
+for the live-process evidence), not a stale artifact.
