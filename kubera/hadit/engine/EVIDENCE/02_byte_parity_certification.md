@@ -77,4 +77,4 @@ Verdict recorded: `CONFIRMED PRE-EXISTING, root cause identified` — filed as a
 BLOCKING finding elsewhere in the package (a cockpit threshold basis, unrelated to parity) and
 several CONFIRMED-OK / CONCERN items — a certification with only-green rows is not what this
 process produces; this is what "26/28 green with 2 honest reds" looks like in practice on this
-codebase, even though the specific July record could not be located this pass.
+codebase — and the July record above shows the same ethic at suite scale.

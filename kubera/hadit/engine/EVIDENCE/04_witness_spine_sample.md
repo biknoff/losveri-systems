@@ -22,7 +22,7 @@
     "qty": "<redacted>",
     "side": "SELL",
     "sl": "<redacted>",
-    "tag": "mgc_c08_entry_<redacted>",
+    "tag": "<leg>_entry_<redacted>",
     "tp": "<redacted>"
   },
   "dry_run": false,
