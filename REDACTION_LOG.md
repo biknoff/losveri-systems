@@ -24,9 +24,6 @@ Tooling: gitleaks/trufflehog/exiftool not installed on this host; systematic gre
 | CERCA photos: EXIF present, GPS unverifiable (no exiftool) | strip | full EXIF stripped via PIL re-encode, both photos |
 | All secret/key/JID/phone/staff-name/PII classes | none found | — |
 
-## Sweep B — contextual human-reader pass
-(appended when sweep B reports)
-
 ## Standing policy (final confirm at publish gate)
 Allowed: `i-ii.trade`, `glass.i-ii.trade`, Leo & Mariele as operators/co-founders, Leo's public GPG fingerprint, loopback IPs, dates and structural counts. Everything else in the handoff §6 list stays out.
 
