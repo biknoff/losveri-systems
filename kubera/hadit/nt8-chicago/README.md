@@ -5,9 +5,12 @@
 
 This is the origin of the HADIT execution lineage: Python-authored strategy logic bridged
 into NinjaTrader 8 through a C# layer, running on a Windows box, live-trading real
-strategies. It traded, it was operated with real supervision discipline, and it was then
-**deliberately outgrown** — in the operator's own words, "we evolved out of
-consumer-grade NT8/Windows." The Chicago VM is gone. The successor Windows deployment
+strategies. It traded — at scale: a preserved snapshot of the platform's own database,
+recomputed in 2026, shows **978 live executions across 11 real prop-firm accounts (peak 10
+concurrent in a single day) in one three-week window** for the two operators — and the
+platform's rolling retention means lifetime volume exceeds what survives to be counted. It
+was operated with real supervision discipline, and it was then **deliberately outgrown** —
+in the operator's own words, "we evolved out of consumer-grade NT8/Windows." The Chicago VM is gone. The successor Windows deployment
 (HaditFugue) that came after it is gone too. Nothing here is a claim that this system is
 still running; it is a claim about where the rest of HADIT came from.
 
